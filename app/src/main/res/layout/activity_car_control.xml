@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LKASBox"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CarControlActivity">
@@ -61,8 +62,8 @@
 
     <TextView
         android:id="@+id/talkingTo"
-        android:layout_width="130dp"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="80dp"
         android:text="@string/label_talkingTo"
@@ -74,11 +75,22 @@
         android:id="@+id/errorLabel"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="15dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#F44336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/talkingTo" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LKAS State"
+        app:layout_constraintBottom_toBottomOf="@+id/talkingTo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toEndOf="@+id/talkingTo"
+        app:layout_constraintTop_toTopOf="@+id/talkingTo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

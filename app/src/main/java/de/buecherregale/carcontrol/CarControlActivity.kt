@@ -5,6 +5,7 @@ package de.buecherregale.carcontrol
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.SeekBar
 import android.widget.TextView
 import de.buecherregale.carcontrol.api.*
@@ -24,6 +25,9 @@ class CarControlActivity : AppCompatActivity() {
     private lateinit var url: String
     private lateinit var apiController: RestApiController
     private lateinit var constants: Constants
+
+    // Julius change
+    private var LKAS: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,6 +99,21 @@ class CarControlActivity : AppCompatActivity() {
                 }
             }
         })
+        // Julius changes
+        val LKASBox = findViewById<CheckBox>(R.id.LKASBox)
+        LKASBox.setOnClickListener{
+            if(LKAS){
+                LKAS = false
+                // comannd to end Script for LKAS on PI
+            }
+            else if (!LKAS){
+                LKAS = true
+                //comannd to start Script for LKAS on PI
+            }
+            //LKAS = !LKAS
+        }
+
+
     }
 
     private fun mapToMinMax(value: Int, center: Int, offset: Int): Int {
@@ -118,6 +137,8 @@ class CarControlActivity : AppCompatActivity() {
             val servoLabel = findViewById<TextView>(R.id.servoText)
             servoLabel.text = getString(R.string.label_servo, body.servo.toString())
         }
+
+
         CoroutineScope(Dispatchers.Main).launch {
             println("doing api post on $url")
 

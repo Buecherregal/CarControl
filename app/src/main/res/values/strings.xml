@@ -9,7 +9,7 @@
     <string name="err_general">unknown error occurred</string>
     <string name="label_speed">Speed: %s</string>
     <string name="label_servo">Servo: %s</string>
-    <string name="label_talkingTo">Talking to: ip: %s port: %s</string>
+    <string name="label_talkingTo">Talking to: ip: %s \n port: %s</string>
     <string name="label_greetings">Enter IP and Port:</string>
 
     <string name="button_neutral">Neutral</string>
